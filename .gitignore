@@ -13,6 +13,7 @@
 # production
 /build
 .npmrc
+storybook-static
 
 # misc
 .DS_Store
@@ -26,3 +27,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
+
+*storybook.log
+storybook-static

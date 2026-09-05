@@ -40,7 +40,7 @@ export const Accordion: FC<AccordionProps> = ({
             </button>
             {isOpen && (
                 <div className={styles.content}>
-                  My content123: {children}
+                  My content12345: {children}
                 </div>
             )}
         </div>

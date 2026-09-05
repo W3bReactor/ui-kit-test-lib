@@ -1,0 +1,30 @@
+import type { StorybookConfig } from '@storybook/react-vite';
+import svgr from "vite-plugin-svgr";
+
+const config: StorybookConfig = {
+  "stories": [
+    "../src/**/*.mdx",
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
+  ],
+  "addons": [
+    "@chromatic-com/storybook",
+    "@storybook/addon-vitest",
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs",
+    "@storybook/addon-onboarding",
+    "@storybook/preset-scss"
+  ],
+  viteFinal: (config) => {
+    config.plugins = config.plugins || []
+    config.plugins.push(
+      svgr({
+        svgrOptions: {
+          icon: true
+        }
+      })
+    );
+    return config;
+  },
+  "framework": "@storybook/react-vite"
+};
+export default config;
